@@ -138,7 +138,10 @@ def get_distribution_type(distro):
 
 
 def get_python_version(distro):
-    return get_index().distributions[distro].get('python_version')
+    try:
+        return int(os.environ['ROS_PYTHON_VERSION'])
+    except (KeyError, ValueError):
+        return get_index().distributions[distro].get('python_version')
 
 
 def get_most_recent(thing_name, repository, reference_distro):
