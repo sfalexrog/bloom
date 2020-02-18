@@ -424,8 +424,8 @@ def generate_substitutions_from_package(
         if not maybe_continue('n', 'Continue anyways'):
             sys.exit("User quit.")
     data['changelogs'] = changelogs
-    # Use debhelper version 7 for oneric, otherwise 9
-    data['debhelper_version'] = 7 if os_version in ['oneiric'] else 9
+    # Use debhelper version 7 for oneric, otherwise 10
+    data['debhelper_version'] = 7 if os_version in ['oneiric'] else 10
     # Summarize dependencies
     summarize_dependency_mapping(data, depends, build_depends, resolved_deps)
     # Copyright
